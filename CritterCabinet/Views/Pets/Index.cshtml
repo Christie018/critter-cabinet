@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Pet>;
+
+<h2>Pets List</h2>
+
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Breed</th>
+        <th>Birth Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (Pet pet in Model)
+    {
+        <tr>
+            <td>@pet.Name</td>
+            <td>@pet.Type</td>
+            <td>@pet.Breed</td>
+            <td>@pet.BirthDate.ToShortDateString()</td>
+            <td>@pet.Status</td>
+            <td>
+                <a asp-controller="Pets" asp-action="Details" asp-route-id="@pet.Id">details</a>
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Add a pet", "Create", "Pets")
+</p>

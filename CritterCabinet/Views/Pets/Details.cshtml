@@ -1,0 +1,17 @@
+﻿@model Pet;
+
+<h2>Pet Details</h2>
+
+
+<div>
+    <h3>@Model.Name</h3>
+    <p>Type: @Model.Name</p>
+    <p>Breed: @Model.Breed</p>
+    <p>Birth Date: @Model.BirthDate.ToShortDateString()</p>
+    <p>Status: @Model.Status</p>
+</div>
+
+
+<p>
+    @Html.ActionLink("Back to Pet List", "Index", "Pets")
+</p>

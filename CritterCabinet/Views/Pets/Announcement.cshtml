@@ -1,0 +1,11 @@
+﻿@model Pet
+
+<h2>New Pet Announcement</h2>
+
+<div>
+    <h3>Welcome to our new @Model.Type, "@Model.Name", born on @Model.BirthDate.ToShortDateString()</h3>
+</div>
+
+<div>
+    @Html.ActionLink("Back to Pet List", "Index", "Pets")
+</div>
